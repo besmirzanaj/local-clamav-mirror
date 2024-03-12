@@ -8,6 +8,16 @@ Tested on a rocky linux 9 VM with docker
 
 ```shell
 dnf install -y clamav-update
+systemctl enable --now clamav-freshclam
+```
+
+Validate the service has no eerors with
+
+```shell
+# systemctl status clamav-freshclam --legend=no 
+● clamav-freshclam.service - ClamAV virus database updater
+     Loaded: loaded (/usr/lib/systemd/system/clamav-freshclam.service; enabled; preset: disabled)
+     Active: active (running) since Tue 2024-03-12 13:19:23 EDT; 23min ago
 ```
 
 ## Run the script
